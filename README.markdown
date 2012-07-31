@@ -16,7 +16,7 @@ Steps to build
 
 * Run configure using something like
 
-      EMMAKEN_JUST_CONFIGURE=1 RANLIB=~/Dev/emscripten/emcc AR=~/Dev/emscripten/emcc CXX=~/Dev/emscripten/emcc CC=~/Dev/emscripten/emcc ./configure --build=none --host=none
+        EMMAKEN_JUST_CONFIGURE=1 RANLIB=~/Dev/emscripten/emcc AR=~/Dev/emscripten/emcc CXX=~/Dev/emscripten/emcc CC=~/Dev/emscripten/emcc ./configure --build=none --host=none
 
 * Edit ``gmp.h`` and disable ``LIKELY``, ``UNLIKELY``
 
@@ -24,18 +24,18 @@ Steps to build
 
 * Run make using something like
 
-      EMMAKEN_CFLAGS="-g" make -j 2
+        EMMAKEN_CFLAGS="-g" make -j 2
 
 * Run ``emscripten.py`` which will build the main test file, link it, then
   compile to JavaScript using Emscripten
 
 * Optionally, optimize using the Emscripten eliminator and/or closure compiler,
 
-      ~/Dev/emscripten/tools/eliminator/node_modules/coffee-script/bin/coffee ~/Dev/emscripten/tools/eliminator/eliminator.coffee < complete.js > complete.elim.js
+        ~/Dev/emscripten/tools/eliminator/node_modules/coffee-script/bin/coffee ~/Dev/emscripten/tools/eliminator/eliminator.coffee < complete.js > complete.elim.js
 
-      java -Xmx1024m -jar CLOSURE_COMPILER --compilation_level ADVANCED_OPTIMIZATIONS --variable_map_output_file src.cpp.o.js.vars --js complete.js --js_output_file complete.cc.js
+        java -Xmx1024m -jar CLOSURE_COMPILER --compilation_level ADVANCED_OPTIMIZATIONS --variable_map_output_file src.cpp.o.js.vars --js complete.js --js_output_file complete.cc.js
 
 * Run the code using something like
 
-      js -m -n complete.js 500
+        js -m -n complete.js 500
 
