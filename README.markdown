@@ -16,7 +16,7 @@ Steps to build
 
 * Run configure using something like
 
-        EMMAKEN_JUST_CONFIGURE=1 RANLIB=~/Dev/emscripten/emcc AR=~/Dev/emscripten/emcc CXX=~/Dev/emscripten/emcc CC=~/Dev/emscripten/emcc ./configure --build=none --host=none
+        emconfigure ./configure --build=none --host=none
 
 * Edit ``gmp.h`` and disable ``LIKELY``, ``UNLIKELY``
 
