@@ -16,15 +16,13 @@ Steps to build
 
 * Run configure using something like
 
-        emconfigure ./configure --build=none --host=none
+        EMCONFIGURE_JS=1 emconfigure ./configure ABI=longlong --build=none --host=none
 
-* Edit ``gmp.h`` and disable ``LIKELY``, ``UNLIKELY``
-
-* Edit ``config.h`` and disable ``HAVE_QUAD_T``, ``HAVE_OBSTACK_VPRINTF``, ``HAVE_LONG_DOUBLE`` and ``HAVE_LONG_LONG``
+* Edit ``config.h`` and disable ``HAVE_QUAD_T``, ``HAVE_OBSTACK_VPRINTF``
 
 * Run make using something like
 
-        EMMAKEN_CFLAGS="-g" make -j 2
+        make -j 2
 
 * Run ``emscripten.sh`` which will build the main test file, link it, then
   compile to JavaScript using Emscripten
