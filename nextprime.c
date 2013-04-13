@@ -41,9 +41,10 @@ along with the GNU MP Library.	If not, see http://www.gnu.org/licenses/.  */
      division.
 */
 
+#include <string.h>		/* for memset */
+
 #include "gmp.h"
 #include "gmp-impl.h"
-#include <string.h>		/* for memset */
 
 
 unsigned long int
