@@ -29,5 +29,5 @@ Steps to build
 
 * Run the code using something like
 
-        js -m -n complete.js 500
+        node complete.js 500
 
